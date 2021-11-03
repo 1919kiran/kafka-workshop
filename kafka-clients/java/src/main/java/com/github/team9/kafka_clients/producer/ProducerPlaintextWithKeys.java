@@ -1,4 +1,4 @@
-package com.github.krunalvora.kafka_clients.producer;
+package com.github.team9.kafka_clients.producer;
 
 import org.apache.kafka.clients.producer.*;
 import org.apache.kafka.common.serialization.StringSerializer;
@@ -6,11 +6,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.Properties;
+import java.util.concurrent.ExecutionException;
 
-public class ProducerPlaintextWithCallback {
-    public static void main(String[] args) {
+public class ProducerPlaintextWithKeys {
+    public static void main(String[] args) throws ExecutionException, InterruptedException {
 
-        final Logger logger = LoggerFactory.getLogger(ProducerPlaintextWithCallback.class);
+        final Logger logger = LoggerFactory.getLogger(ProducerPlaintextWithKeys.class);
 
         Properties properties = new Properties();
         properties.setProperty(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "127.0.0.1:9092");
@@ -19,8 +20,15 @@ public class ProducerPlaintextWithCallback {
 
         KafkaProducer<String, String> producer = new KafkaProducer<String, String>(properties);
 
-        for (int i=0; i<25; i++) {
-            ProducerRecord<String, String> record = new ProducerRecord<String, String>("first_topic", "hello");
+        for (int i=0; i<10; i++) {
+
+            String topic = "first_topic";
+            String value = "hello" + Integer.toString(i);
+            String key = "id_" + Integer.toString(i);
+            ProducerRecord<String, String> record = new ProducerRecord<String, String>(topic, key, value);
+
+            logger.info("Key: " + key);
+
             producer.send(record, new Callback() {
                 public void onCompletion(RecordMetadata recordMetadata, Exception e) {
                     if (e == null) {
@@ -33,7 +41,7 @@ public class ProducerPlaintextWithCallback {
                         logger.error("Error while producing", e);
                     }
                 }
-            });
+            }).get(); // block the .send() to make it synchronous
         }
         producer.close();
     }

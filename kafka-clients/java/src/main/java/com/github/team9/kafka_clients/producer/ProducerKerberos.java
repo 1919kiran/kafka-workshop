@@ -1,4 +1,4 @@
-package com.github.krunalvora.kafka_clients.producer;
+package com.github.team9.kafka_clients.producer;
 
 import org.apache.kafka.clients.CommonClientConfigs;
 import org.apache.kafka.clients.producer.KafkaProducer;

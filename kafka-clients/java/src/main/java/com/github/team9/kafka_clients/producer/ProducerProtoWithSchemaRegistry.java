@@ -1,4 +1,4 @@
-package com.github.krunalvora.kafka_clients.producer;
+package com.github.team9.kafka_clients.producer;
 
 import com.github.krunalvora.kafka_clients.protobuf.Event1OuterClass.Event1;
 import com.github.krunalvora.kafka_clients.protobuf.Event2OuterClass.Event2;

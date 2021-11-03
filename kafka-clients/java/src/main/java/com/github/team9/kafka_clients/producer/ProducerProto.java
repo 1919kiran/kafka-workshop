@@ -1,4 +1,4 @@
-package com.github.krunalvora.kafka_clients.producer;
+package com.github.team9.kafka_clients.producer;
 
 import com.github.daniel.shuy.kafka.protobuf.serde.KafkaProtobufSerializer;
 import com.github.krunalvora.kafka_clients.protobuf.Event1OuterClass.Event1;

@@ -1,4 +1,4 @@
-package com.github.krunalvora.kafka_clients.consumer;
+package com.github.team9.kafka_clients.consumer;
 
 import org.apache.kafka.clients.CommonClientConfigs;
 import org.apache.kafka.clients.consumer.ConsumerConfig;

@@ -1,4 +1,4 @@
-package com.github.krunalvora.kafka_clients.producer;
+package com.github.team9.kafka_clients.producer;
 
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerConfig;
@@ -17,7 +17,7 @@ public class ProducerPlaintext {
 
         KafkaProducer<String, String> producer = new KafkaProducer<String, String>(properties);
 
-        ProducerRecord<String, String> record = new ProducerRecord<String, String>("topic1", "hello");
+        ProducerRecord<String, String> record = new ProducerRecord<String, String>("youtubeFeed", "Hello from producer");
         producer.send(record);
         producer.close();
     }

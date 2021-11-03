@@ -1,4 +1,4 @@
-package com.github.krunalvora.kafka_clients.producer;
+package com.github.team9.kafka_clients.producer;
 
 import com.github.krunalvora.kafka_clients.avro.Customer;
 import com.github.krunalvora.kafka_clients.avro.Student;

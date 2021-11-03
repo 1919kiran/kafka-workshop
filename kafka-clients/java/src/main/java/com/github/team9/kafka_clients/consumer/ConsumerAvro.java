@@ -1,4 +1,4 @@
-package com.github.krunalvora.kafka_clients.consumer;
+package com.github.team9.kafka_clients.consumer;
 
 import com.github.krunalvora.kafka_clients.avro.Student;
 import io.confluent.kafka.serializers.KafkaAvroDeserializer;

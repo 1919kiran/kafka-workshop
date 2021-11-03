@@ -1,4 +1,4 @@
-package com.github.krunalvora.kafka_clients.consumer;
+package com.github.team9.kafka_clients.consumer;
 
 import com.google.protobuf.Descriptors.FieldDescriptor;
 import com.google.protobuf.Message;
